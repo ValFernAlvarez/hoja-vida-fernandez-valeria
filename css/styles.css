@@ -1,37 +1,33 @@
-/* =========================================================
-   1. VARIABLES DE DISEÑO (Custom Properties)
-   Definimos aquí nuestra paleta de colores, tipografía y
-   valores reutilizables (sombras, radios de borde) UNA sola
-   vez. Así, si mañana queremos cambiar el color principal,
-   lo cambiamos en un solo lugar y toda la página se actualiza.
-   ========================================================= */
+
 :root {
-    --color-bg: #f5f6f8;           /* fondo general de la página */
-    --color-surface: #ffffff;      /* fondo de "tarjetas" (header, articles) */
-    --color-text: #292b32;         /* texto principal */
-    --color-text-muted: #5c6472;   /* texto secundario (fechas, subtítulos) */
-    --color-primary: #1f3a5f;      /* azul marino: header, encabezados */
-    --color-primary-dark: #142845; /* azul más oscuro: hover de enlaces */
-    --color-accent: #c98a3b;       /* dorado: detalles, mark, bordes de acento */
-    --color-border: #dfe3e8;       /* bordes suaves */
+    --color-bg: #d8dcff;          /* Periwinkle claro — fondo de página */
+    --color-surface: #ffffff;      /* fondo de tarjetas (header, articles) */
+    --color-text: #2c2b3d;         /* texto principal */
+    --color-text-muted: #5c5b77;   /* texto secundario (fechas, subtítulos) */
+
+    --color-primary: #565676;      /* Dusty Grape — encabezados, thead */
+    --color-primary-dark: #42405c; /* Dusty Grape oscuro — hover */
+
+    --color-periwinkle: #aeadf0;   /* Periwinkle medio — píldoras de nav, filas alternas */
+    --color-border: #c7c6ea;       /* borde suave, familia periwinkle */
+
+    --color-accent: #8a4a56;       /* Rosewood oscurecido — botones, focus, enlaces hover */
+    --color-accent-soft: #c38d94;  /* Rosy Taupe — fondos decorativos, mark, badges */
 
     --radius: 10px;
-    --shadow-sm: 0 1px 3px rgba(20, 40, 69, 0.08);
-    --shadow-md: 0 6px 16px rgba(20, 40, 69, 0.10);
+    --shadow-sm: 0 1px 3px rgba(66, 64, 92, 0.14);
+    --shadow-md: 0 6px 16px rgba(66, 64, 92, 0.16);
 
-    --font-base: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-base: "Montserrat", "Segoe UI", Arial, sans-serif;
 }
 
-/* =========================================================
-   2. RESET BÁSICO
-   Por defecto, cada navegador calcula el ancho de una caja
-   sumando padding y border AL width que le des. Con
-   box-sizing: border-box, el padding y el border quedan
-   DENTRO del ancho que definas — mucho más predecible.
-   ========================================================= */
+
+
 * {
     box-sizing: border-box;
 }
+
+
 
 body {
     margin: 0;
@@ -40,16 +36,12 @@ body {
     line-height: 1.6;
     color: var(--color-text);
     background-color: var(--color-bg);
+    accent-color: var(--color-accent); /* tiñe checkboxes/radios/progress/meter nativos */
 }
 
-/* =========================================================
-   3. ENLACE "SALTAR AL CONTENIDO PRINCIPAL"
-   Técnica clásica de accesibilidad: el enlace existe en el
-   HTML para lectores de pantalla y navegación por teclado,
-   pero lo sacamos visualmente de la pantalla con position:
-   absolute + un tamaño de 1px. En cuanto alguien lo enfoca
-   con Tab (:focus), lo regresamos a la vista.
-   ========================================================= */
+
+
+/* ENLACE "SALTAR AL CONTENIDO PRINCIPAL */
 .skip-link {
     position: absolute;
     left: -999px;
@@ -67,15 +59,17 @@ body {
     padding: 0.5rem 1rem;
     margin: 0.5rem;
     background-color: var(--color-accent);
-    color: var(--color-primary-dark);
-    font-weight: bold;
+    color: #ffffff;
+    font-weight: 600;
     border-radius: var(--radius);
 }
 
-/* =========================================================
-   4. TIPOGRAFÍA — ENCABEZADOS Y ENLACES
-   ========================================================= */
+
+
+/* TIPOGRAFÍA — ENCABEZADOS Y ENLACES */
 h1, h2, h3 {
+    font-family: var(--font-base);
+    font-weight: 700;
     color: var(--color-primary);
     line-height: 1.25;
 }
@@ -87,19 +81,20 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    border-bottom: 3px solid var(--color-accent);
+    border-bottom: 3px solid var(--color-accent-soft);
     padding-bottom: 0.4rem;
     margin-top: 0;
 }
 
 h3 {
     font-size: 1.15rem;
+    font-weight: 600;
     color: var(--color-primary-dark);
 }
 
 a {
     color: var(--color-primary);
-    text-decoration-color: var(--color-accent);
+    text-decoration-color: var(--color-accent-soft);
     text-decoration-thickness: 2px;
 }
 
@@ -109,18 +104,15 @@ a:focus {
 }
 
 mark {
-    background-color: #fbe9d0;
-    color: var(--color-primary-dark);
+    background-color: var(--color-accent-soft);
+    color: #ffffff;
     padding: 0.05em 0.3em;
     border-radius: 3px;
 }
 
-/* =========================================================
-   5. ENCABEZADO PERSONAL (<header>)
-   Le damos apariencia de "tarjeta" profesional: fondo blanco,
-   borde redondeado, sombra suave y separación del resto de
-   la página.
-   ========================================================= */
+
+
+/* ENCABEZADO PERSONAL (<header>) */
 header {
     max-width: 900px;
     margin: 1.5rem auto;
@@ -134,7 +126,7 @@ header {
 
 header img {
     border-radius: var(--radius);
-    border: 4px solid var(--color-accent);
+    border: 4px solid var(--color-accent-soft);
     box-shadow: var(--shadow-sm);
 }
 
@@ -150,15 +142,14 @@ header hr {
     margin: 1.5rem 0;
 }
 
-/* Botón de descarga de CV, con apariencia de botón real */
 header p a[download] {
     display: inline-block;
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
     color: #ffffff;
     padding: 0.6rem 1.2rem;
     border-radius: var(--radius);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     box-shadow: var(--shadow-sm);
 }
 
@@ -168,18 +159,38 @@ header p a[download]:focus {
     color: #ffffff;
 }
 
-/* Nota: la navegación (nav ul li) la dejamos con el estilo
-   por defecto del navegador por ahora — en el Paso 2 la
-   convertimos a una fila horizontal con Flexbox. */
+/* NAVEGACIÓN — FLEXBOX */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 0.8rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-/* =========================================================
-   6. CONTENIDO PRINCIPAL — SECCIONES Y TARJETAS
-   Cada <section> también se centra en un contenedor de ancho
-   máximo (para que el texto no se estire de borde a borde en
-   pantallas grandes), y cada <article>/<aside> se ve como una
-   tarjeta separada, con su propio borde, sombra y esquinas
-   redondeadas.
-   ========================================================= */
+nav ul li a {
+    display: inline-block;
+    padding: 0.45rem 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--color-primary-dark);
+    background-color: var(--color-periwinkle);
+    border: 1px solid var(--color-border);
+    font-weight: 600;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border-color: var(--color-accent);
+}
+
+
+
+/* CONTENIDO PRINCIPAL — SECCIONES Y TARJETAS */
 main {
     max-width: 900px;
     margin: 0 auto;
@@ -210,11 +221,27 @@ aside {
     border-left: 4px solid var(--color-accent);
 }
 
-/* =========================================================
-   7. TABLA DE IDIOMAS
-   Ya tienes border="1" en el HTML (líneas visibles); aquí solo
-   afinamos el espaciado y los colores para que se vea prolija.
-   ========================================================= */
+
+
+/* PROYECTOS DESTACADOS — CSS GRID */
+#proyectos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual ancho */
+    gap: 1.25rem;                          /* espacio entre tarjetas, fila y columna */
+    align-items: start;
+}
+
+#proyectos h2 {
+    grid-column: 1 / -1; /* el título ocupa las 2 columnas completas */
+}
+
+#proyectos article {
+    margin-bottom: 0; /* el gap del grid ya da la separación */
+}
+
+
+
+/* TABLA DE IDIOMAS */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -235,12 +262,12 @@ thead th {
 }
 
 tbody tr:nth-child(even) {
-    background-color: var(--color-bg);
+    background-color: var(--color-periwinkle);
 }
 
-/* =========================================================
-   8. FORMULARIO DE CONTACTO
-   ========================================================= */
+
+
+/* FORMULARIO DE CONTACTO */
 fieldset {
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
@@ -250,6 +277,7 @@ fieldset {
 legend {
     padding: 0 0.5rem;
     color: var(--color-primary);
+    font-weight: 600;
 }
 
 input[type="text"],
@@ -280,12 +308,13 @@ button[type="reset"] {
     padding: 0.6rem 1.4rem;
     border: none;
     border-radius: var(--radius);
-    font-weight: bold;
+    font-weight: 600;
+    font-family: inherit;
     cursor: pointer;
 }
 
 button[type="submit"] {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
     color: #ffffff;
 }
 
@@ -303,13 +332,51 @@ button[type="reset"]:hover {
     background-color: var(--color-border);
 }
 
-/* =========================================================
-   9. PIE DE PÁGINA
-   ========================================================= */
+/* 11. PIE DE PÁGINA */
 footer {
     max-width: 900px;
     margin: 0 auto 2rem;
     padding: 1rem 2rem;
     text-align: center;
     color: var(--color-text-muted);
+}
+
+
+
+/* RESPONSIVE — MEDIA QUERY */
+@media (max-width: 600px) {
+    header,
+    main,
+    footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    header {
+        padding: 1.25rem;
+        margin: 1rem auto;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    nav ul li a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    #proyectos {
+        grid-template-columns: 1fr; /* una sola columna en pantallas chicas */
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }

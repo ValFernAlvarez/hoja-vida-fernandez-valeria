@@ -90,17 +90,6 @@ Contenido Principal", atributos `aria-*` (`aria-label`, `aria-describedby`, `ari
 `aria-invalid`), mensajes de error de formulario anunciados por lectores de pantalla (`aria-live="polite"`),
 y respeto por `prefers-reduced-motion` en las animaciones.
 
-## Cómo verlo
-
-Abre `index.html` en cualquier navegador (Chrome, Firefox, Edge). No requiere instalación ni servidor —
-solo mantén `css/`, `js/` y `assets/` junto a `index.html`.
-
-## Publicación en GitHub Pages
-
-1. Sube esta carpeta a un repositorio de GitHub (`git init`, `git add`, `git commit`, `git push`).
-2. En el repositorio, ve a **Settings → Pages**.
-3. En **Source**, selecciona la rama `main` y la carpeta `/ (root)`.
-4. Guarda; GitHub Pages publicará el sitio en `https://<usuario>.github.io/<repositorio>/`.
 
 ## Enlaces
 

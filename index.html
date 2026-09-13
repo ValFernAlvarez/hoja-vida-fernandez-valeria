@@ -16,22 +16,28 @@
 
 
     <!-- Enlace de salto directo para navegación -->
-    <br><a href="#main-content" class="skip-link">Saltar al Contenido Principal</a>
+    <br><a href="#main_content" class="skip_link">Saltar al Contenido Principal</a>
     <br>
 
 
     <!-- Encabezado Personal -->
-    <header role="banner">
-        <picture>
+    <header>
+        <button id="theme_toggle" type="button" class="theme_toggle" aria-pressed="false"
+            aria-label="Cambiar a modo oscuro">
+            <img id="theme_toggle_icon" src="assets/images/icons/moon.svg" alt="" width="22" height="22">
+        </button>
+
+        <picture class="header_photo">
             <source media="(max-width: 500px)" srcset="assets/images/foto-profesional.png">
             <img src="assets/images/foto-profesional.png"
                 alt="Fotografía profesional de Valeria Christen Fernández Álvarez"
-                width="231" height="308" loading="lazy">
+                width="260" height="260" loading="lazy">
         </picture>
+        <p class="badge_disponible">Disponible para prácticas profesionales</p>
 
         <h1>Valeria Christen Fernández Álvarez</h1>
-        <p>· Estudiante de Ingeniería de Sistemas ·</p>
-        <p><small>"Construyendo puentes entre la tecnología emergente y el sector social."</small></p>
+        <p class="header_subtitle">· Estudiante de Ingeniería de Sistemas ·</p>
+        <p class="header_quote"><small>"Construyendo puentes entre la tecnología emergente y el sector social."</small></p>
 
         <address>
             La Paz, Bolivia<br>
@@ -40,10 +46,15 @@
             Teléfono: <a href="tel:+59169982797">+591 69982797</a>
         </address>
 
-        <p>
-            <a href="assets/documents/valeria-fernandez-resume.pdf" download
+        <p class="header_actions">
+            <a class="btn btn_primary" href="assets/documents/valeria-fernandez-resume.pdf" download
                 aria-label="Descargar el currículum de Valeria Fernández en formato PDF">
                 ¡Aquí puedes descargar mi currículum en PDF!
+            </a>
+            <a class="btn btn_outline" href="https://github.com/ValFernAlvarez" target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar el perfil de GitHub de Valeria Fernández (se abre en una pestaña nueva)">
+                GitHub: github.com/ValFernAlvarez
             </a>
         </p>
 
@@ -68,11 +79,11 @@
     </header>
 
     <!-- Contenido Principal -->
-    <main id="main-content" role="main">
+    <main id="main_content">
 
         <!-- B. Perfil Profesional -->
-        <section id="perfil" aria-labelledby="perfil-heading">
-            <h2 id="perfil-heading">Perfil Profesional</h2>
+        <section id="perfil" aria-labelledby="perfil_heading">
+            <h2 id="perfil_heading">Perfil Profesional</h2>
 
             <article>
                 <h3>Presentación Personal</h3>
@@ -111,8 +122,8 @@
                 </p>
             </article>
 
-            <aside aria-labelledby="destacados-heading">
-                <h3 id="destacados-heading">Reconocimientos destacados</h3>
+            <aside aria-labelledby="destacados_heading">
+                <h3 id="destacados_heading">Reconocimientos destacados</h3>
                 <ol>
                     <li><time datetime="2024-06">Junio 2024</time> — 1er lugar, categoría Impacto Social STEAM,
                         competencia internacional Geeky Latin@s (puntaje 9.80/10).</li>
@@ -131,8 +142,8 @@
 
 
         <!-- C. Fromación Académica -->
-        <section id="formacion" aria-labelledby="formacion-heading">
-            <h2 id="formacion-heading">Formación Académica</h2>
+        <section id="formacion" aria-labelledby="formacion_heading">
+            <h2 id="formacion_heading">Formación Académica</h2>
 
             <article>
                 <h3>Ingeniería de Sistemas (en curso)</h3>
@@ -165,8 +176,8 @@
 
 
         <!-- D. Experiencia Profesional y Liderazgo -->
-        <section id="experiencia" aria-labelledby="experiencia-heading">
-            <h2 id="experiencia-heading">Experiencia Profesional y Liderazgo</h2>
+        <section id="experiencia" aria-labelledby="experiencia_heading">
+            <h2 id="experiencia_heading">Experiencia Profesional y Liderazgo</h2>
 
             <article>
                 <h3>Encargada de Mantenimiento Web</h3>
@@ -223,12 +234,12 @@
 
 
         <!-- E. Habilidades Técnicas y Profesionales -->
-        <section id="habilidades" aria-labelledby="habilidades-heading">
-            <h2 id="habilidades-heading">Habilidades Técnicas y Profesionales</h2>
+        <section id="habilidades" aria-labelledby="habilidades_heading">
+            <h2 id="habilidades_heading">Habilidades Técnicas y Profesionales</h2>
 
             <h3>Lenguajes y tecnologías</h3>
             <ul>
-                
+
                 <li>HTML5 —
                     <meter min="0" max="10" value="6" low="4" high="8" optimum="10"
                         aria-label="Nivel de dominio en HTML5: intermedio">6/10</meter>
@@ -285,9 +296,9 @@
 
 
         <!-- F. Certificaciones, Cursos y Talleres -->
-        <section id="certificaciones" aria-labelledby="certificaciones-heading">
-            <h2 id="certificaciones-heading">Certificaciones, Cursos y Talleres</h2>
-            
+        <section id="certificaciones" aria-labelledby="certificaciones_heading">
+            <h2 id="certificaciones_heading">Certificaciones, Cursos y Talleres</h2>
+
             <ul>
                 <li><time datetime="2020-11">Noviembre de 2020</time> — <strong>Graphic Design Elements for
                         Non-Designers</strong>, University of Colorado Boulder (curso en línea). Calificación final:
@@ -318,9 +329,9 @@
 
 
         <!-- G. Idiomas -->
-        <section id="idiomas" aria-labelledby="idiomas-heading">
-            <h2 id="idiomas-heading">Idiomas</h2>
-            <table border="1" cellpadding="8" cellspacing="0">
+        <section id="idiomas" aria-labelledby="idiomas_heading">
+            <h2 id="idiomas_heading">Idiomas</h2>
+            <table>
                 <caption><strong>Nivel de dominio por idioma</strong></caption>
                 <thead>
                     <tr>
@@ -353,8 +364,8 @@
 
 
         <!-- H. Proyectos Destacados -->
-        <section id="proyectos" aria-labelledby="proyectos-heading">
-            <h2 id="proyectos-heading">Proyectos Destacados</h2>
+        <section id="proyectos" aria-labelledby="proyectos_heading">
+            <h2 id="proyectos_heading">Proyectos Destacados</h2>
 
             <article>
                 <h3>Budget-Buddy</h3>
@@ -368,9 +379,10 @@
                 <p><strong>Resultado obtenido:</strong> aplicación de consola completamente funcional, con registro y
                     eliminación de gastos, detección de excesos de gasto y reportes automáticos por categoría, fecha y mes.</p>
                 <p>
-                    <a href="https://github.com/ValFernAlvarez/Budget-Buddy" target="_blank" rel="noopener noreferrer"
+                    <a class="btn btn_outline btn_sm" href="https://github.com/ValFernAlvarez/Budget-Buddy"
+                        target="_blank" rel="noopener noreferrer"
                         aria-label="Ver repositorio de Budget-Buddy en GitHub (se abre en una nueva pestaña)">
-                        Ver repositorio de Budget-Buddy en GitHub
+                        Ver repositorio en GitHub
                     </a>
                 </p>
             </article>
@@ -387,9 +399,10 @@
                     Intermedio y Experto), interfaz gráfica personalizada, música de fondo y título animado; distribuido como
                     ejecutable independiente para Windows.</p>
                 <p>
-                    <a href="https://github.com/ValFernAlvarez/TOQUE-FAMA" target="_blank" rel="noopener noreferrer"
+                    <a class="btn btn_outline btn_sm" href="https://github.com/ValFernAlvarez/TOQUE-FAMA"
+                        target="_blank" rel="noopener noreferrer"
                         aria-label="Ver repositorio de Toque-Fama en GitHub (se abre en una nueva pestaña)">
-                        Ver repositorio de Toque-Fama en GitHub
+                        Ver repositorio en GitHub
                     </a>
                 </p>
             </article>
@@ -419,8 +432,8 @@
                 <p><strong>Resultado obtenido:</strong> sitio funcional que cumple los criterios de estructura
                     semántica, accesibilidad, multimedia y formularios definidos en la rúbrica del curso.</p>
                 <p>
-                    <a href="https://github.com/TODO-usuario/hoja-vida-fernandez-valeria" target="_blank"
-                        rel="noopener noreferrer"
+                    <a class="btn btn_outline btn_sm" href="https://github.com/TODO-usuario/hoja-vida-fernandez-valeria"
+                        target="_blank" rel="noopener noreferrer"
                         aria-label="Ver repositorio de este proyecto en GitHub (se abre en una nueva pestaña)">
                         Ver repositorio en GitHub
                     </a>
@@ -433,13 +446,13 @@
 
 
         <!-- I. Portafolio Multimedia -->
-        <section id="multimedia" aria-labelledby="multimedia-heading">
-            <h2 id="multimedia-heading">Portafolio Multimedia</h2>
+        <section id="multimedia" aria-labelledby="multimedia_heading">
+            <h2 id="multimedia_heading">Portafolio Multimedia</h2>
 
             <article>
                 <h3>Fotografía profesional</h3>
-                <figure>
-                    <img src="assets/images/foto-profesional.png"
+                <figure class="figure_circle">
+                    <img class="photo_circle" src="assets/images/foto-profesional.png"
                         alt="Fotografía profesional de Valeria Fernández Álvarez" width="231" height="308">
                     <figcaption>Figura 1: Fotografía profesional utilizada en el encabezado de esta hoja de vida.
                     </figcaption>
@@ -459,18 +472,6 @@
             </article>
 
             <article>
-                <h3>Video de proyecto</h3>
-                <p>Video relacionado con un proyecto de Presentación Personal:</p>
-                <figure>
-                    <video controls width="480" preload="metadata"
-                        aria-label="Video relacionado con una presentación personal de Valeria Fernández">
-                        <source src="assets/video/presentacion-personal.mp4" type="video/mp4">
-                    </video>
-                    <figcaption>Video 1: Presentación del proyecto</figcaption>
-                </figure>
-            </article>
-
-            <article>
                 <h3>Imagen de EcoGuardianes</h3>
                 <figure>
                     <img src="assets/images/ecoguardianes.png"
@@ -485,6 +486,18 @@
                         primer lugar en la categoría de Impacto Social STEAM, con un puntaje de 9.80/10.</p>
                 </details>
             </article>
+
+            <article class="video_showcase">
+                <h3>Video de proyecto</h3>
+                <p>Video relacionado con un proyecto de Presentación Personal:</p>
+                <figure>
+                    <video controls width="720" preload="metadata"
+                        aria-label="Video relacionado con una presentación personal de Valeria Fernández">
+                        <source src="assets/video/presentacion-personal.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Video 1: Presentación del proyecto</figcaption>
+                </figure>
+            </article>
         </section>
 
 
@@ -492,13 +505,13 @@
 
 
         <!-- AVISO EMERGENTE NATIVO (DIALOG) -->
-        <section id="aviso" aria-labelledby="aviso-heading">
-            <h2 id="aviso-heading">Información Rápida (Elemento Nativo)</h2>
+        <section id="aviso" aria-labelledby="aviso_heading">
+            <h2 id="aviso_heading">Información Rápida (Elemento Nativo)</h2>
 
-            <dialog open role="dialog" aria-modal="false" aria-labelledby="dialog-contacto-title"
-                aria-describedby="dialog-contacto-desc">
-                <h3 id="dialog-contacto-title">Información rápida de contacto</h3>
-                <p id="dialog-contacto-desc">
+            <dialog open aria-modal="false" aria-labelledby="dialog_contacto_title"
+                aria-describedby="dialog_contacto_desc">
+                <h3 id="dialog_contacto_title">Información rápida de contacto</h3>
+                <p id="dialog_contacto_desc">
                     Puedes escribirme directamente a
                     <a href="mailto:valeria.fernalva@gmail.com">valeria.fernalva@gmail.com</a>
                     o llamarme al <a href="tel:+59169982797">+591 69982797</a>. También puedes completar el
@@ -513,66 +526,75 @@
         <hr>
 
         <!-- J. Contacto -->
-        <section id="contacto" aria-labelledby="contacto-heading">
-            <h2 id="contacto-heading">Formulario de Contacto</h2>
+        <section id="contacto" aria-labelledby="contacto_heading">
+            <h2 id="contacto_heading">Formulario de Contacto</h2>
             <p>¿Quieres conversar sobre una oportunidad, colaboración o mentoría? Completa el siguiente formulario:
             </p>
 
-            <form action="#" method="post">
+            <form action="#" method="post" id="form_contacto" novalidate>
 
                 <fieldset>
                     <legend><strong>Datos de contacto</strong></legend>
 
                     <p>
                         <label for="nombre">Nombre completo (*):</label><br>
-                        <input type="text" id="nombre" name="nombre" required aria-required="true"
-                            minlength="3" maxlength="60" placeholder="Ej. Valeria Fernández">
+                        <input type="text" id="nombre" name="nombre" required
+                            minlength="3" maxlength="60" placeholder="Ej. Valeria Fernández"
+                            aria-describedby="nombre_error">
+                        <small class="error_message" id="nombre_error" aria-live="polite"></small>
                     </p>
 
                     <p>
                         <label for="correo">Correo electrónico (*):</label><br>
-                        <input type="email" id="correo" name="correo" required aria-required="true"
-                            placeholder="correo@ejemplo.com">
+                        <input type="email" id="correo" name="correo" required
+                            placeholder="correo@ejemplo.com" aria-describedby="correo_error">
+                        <small class="error_message" id="correo_error" aria-live="polite"></small>
                     </p>
 
                     <p>
                         <label for="telefono">Teléfono (*):</label><br>
-                        <input type="tel" id="telefono" name="telefono" required aria-required="true"
-                            aria-describedby="telefono-help" placeholder="+591 70000000"
+                        <input type="tel" id="telefono" name="telefono" required
+                            aria-describedby="telefono_help telefono_error" placeholder="+591 70000000"
                             pattern="(\+591|591)?[67][0-9]{7}"><br>
-                        <small id="telefono-help">Formato: número celular boliviano de 8 dígitos (ej. +591
+                        <small id="telefono_help">Formato: número celular boliviano de 8 dígitos (ej. +591
                             70000000).</small>
+                        <small class="error_message" id="telefono_error" aria-live="polite"></small>
                     </p>
 
                     <p>
                         <label for="motivo">Motivo de contacto (*):</label><br>
-                        <select id="motivo" name="motivo" required aria-required="true">
+                        <select id="motivo" name="motivo" required
+                            aria-describedby="motivo_error">
                             <option value="" disabled selected>-- Selecciona un motivo --</option>
                             <option value="oportunidad-laboral">Oportunidad laboral</option>
                             <option value="colaboracion">Colaboración en proyecto</option>
                             <option value="mentoria">Mentoría / consulta académica</option>
                             <option value="otro">Otro</option>
                         </select>
+                        <small class="error_message" id="motivo_error" aria-live="polite"></small>
                     </p>
 
                     <p>
-                        <label for="fecha-respuesta">Fecha preferida de respuesta (opcional):</label><br>
-                        <input type="date" id="fecha-respuesta" name="fecha_respuesta" min="2026-08-26"
-                            max="2026-12-31" aria-describedby="fecha-help"><br>
-                        <small id="fecha-help">Elige una fecha entre hoy y fin de 2026.</small>
+                        <label for="fecha_respuesta">Fecha preferida de respuesta (opcional):</label><br>
+                        <input type="date" id="fecha_respuesta" name="fecha_respuesta" min="2026-08-26"
+                            max="2026-12-31" aria-describedby="fecha_help"><br>
+                        <small id="fecha_help">Elige una fecha entre hoy y fin de 2026.</small>
                     </p>
 
                     <p>
                         <label for="mensaje">Mensaje (*):</label><br>
-                        <textarea id="mensaje" name="mensaje" rows="5" cols="40" required aria-required="true"
-                            minlength="10" maxlength="500"
-                            placeholder="Escribe tu mensaje aquí..."></textarea>
+                        <textarea id="mensaje" name="mensaje" rows="5" cols="40" required
+                            minlength="10" maxlength="500" placeholder="Escribe tu mensaje aquí..."
+                            aria-describedby="mensaje_error"></textarea>
+                        <small class="error_message" id="mensaje_error" aria-live="polite"></small>
                     </p>
 
                     <p>
-                        <input type="checkbox" id="aceptacion" name="aceptacion" required aria-required="true">
+                        <input type="checkbox" id="aceptacion" name="aceptacion" required
+                            aria-describedby="aceptacion_error">
                         <label for="aceptacion">Acepto que mis datos sean utilizados únicamente para responder a
                             este mensaje (*)</label>
+                        <small class="error_message" id="aceptacion_error" aria-live="polite"></small>
                     </p>
                 </fieldset>
 
@@ -580,6 +602,8 @@
                     <button type="submit"><strong>Enviar Mensaje</strong></button>
                     <button type="reset">Limpiar Formulario</button>
                 </p>
+
+                <p class="form_status" id="form_status" role="status" aria-live="polite"></p>
             </form>
         </section>
 
@@ -588,13 +612,15 @@
     <hr>
 
     <!-- PIE DE PÁGINA -->
-    <footer role="contentinfo">
+    <footer>
         <p><small>&copy; 2026 Valeria Christen Fernández Álvarez. Todos los derechos reservados.</small></p>
-        <p><small>Hoja de vida desarrollada como proyecto académico utilizando exclusivamente HTML5 nativo, sin
-                frameworks ni JavaScript.</small></p>
+        <p><small>Hoja de vida desarrollada como proyecto académico utilizando HTML5 semántico, CSS3 propio
+                (sin frameworks) y JavaScript nativo (sin librerías).</small></p>
         <p><small>Última actualización del documento:
-                <time datetime="2026-08-26">Agosto de 2026</time>.</small></p>
+                <time datetime="2026-09-13">Septiembre de 2026</time>.</small></p>
     </footer>
+
+    <script src="js/script.js" defer></script>
 
 </body>
 
